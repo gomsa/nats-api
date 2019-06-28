@@ -36,10 +36,12 @@ func (srv *Nats) MobileVerify(ctx context.Context, req *pb.Request, res *pb.Resp
 		},
 	}
 	roleRes, err := client.Nats.ProcessCommonRequest(ctx, request)
+		log.Log(err)
 	if err != nil {
 		return err
 	}
 	if !roleRes.Valid {
+		log.Log(roleRes, err)
 		return errors.New("发送验证码失败")
 	}
 	res.Valid = true

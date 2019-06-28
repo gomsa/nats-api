@@ -6,7 +6,7 @@ require (
 	github.com/coreos/etcd v3.3.13+incompatible // indirect
 	github.com/go-redis/redis v6.15.2+incompatible
 	github.com/golang/protobuf v1.3.1
-	github.com/gomsa/nats v0.0.0-20190628032538-3adc49329278
+	github.com/gomsa/nats v0.0.0-20190628064844-6d4e485799b6
 	github.com/gomsa/tools v0.0.0-20190615000832-56bbd6704f6b
 	github.com/gomsa/user-srv v0.0.0-20190625082531-c719541bb788
 	github.com/micro/go-micro v1.7.0

@@ -7,12 +7,14 @@ import (
 	micro "github.com/micro/go-micro"
 	k8s "github.com/micro/kubernetes/go/micro"
 
+
+	"github.com/gomsa/user-srv/client"
+	m "github.com/gomsa/user-srv/middleware"
+
 	"github.com/gomsa/nats-api/hander"
 	natsPB "github.com/gomsa/nats-api/proto/nats"
 	templatePB "github.com/gomsa/nats-api/proto/template"
 
-	"github.com/gomsa/nats/client"
-	m "github.com/gomsa/user-srv/middleware"
 )
 
 func main() {

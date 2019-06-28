@@ -16,6 +16,6 @@ var Conf config.Config = config.Config{
 		{Service: "nats-api", Method: "Templates.List", Auth: true, Policy: true, Name: "事件模板列表", Description: "查询事件模板列表"},
 		{Service: "nats-api", Method: "Templates.All", Auth: true, Policy: true, Name: "全部事件模板", Description: "查询全部事件模板。"},
 
-		{Service: "nats-api", Method: "Nats.MobileVerify", Auth: true, Policy: true, Name: "手机验证码发送", Description: "发送手机验证码"},
+		{Service: "nats-api", Method: "Nats.MobileVerify", Auth: true, Policy: false, Name: "手机验证码发送", Description: "发送手机验证码"},
 	},
 }

@@ -52,6 +52,7 @@ func (srv *Nats) Verify() (key string,vrify string, err error) {
 	key = uuid.NewV4().String()
 	vrify = fmt.Sprintf("%06v", rand.New(rand.NewSource(time.Now().UnixNano())).Int31n(1000000))
 	redis := redis.NewClient()
-	err = redis.Set(key, vrify, 0).Err()
+	// 过期时间默认30分钟
+	err = redis.SetNX(key, vrify, 30*time.Minute).Err()
 	return key, vrify, err
 }

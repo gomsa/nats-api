@@ -28,8 +28,8 @@ func main() {
 		micro.WrapHandler(h.Wrapper), //验证权限
 	)
 	srv.Init()
-	natsPB.RegisterNatsHandler(srv.Server(), &hander.Nats{})
 
+	natsPB.RegisterNatsHandler(srv.Server(), &hander.Nats{})
 	templatePB.RegisterTemplatesHandler(srv.Server(), &hander.Template{})
 
 	// Run the server

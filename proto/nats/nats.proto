@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package nats;
+
+service Nats {
+    // 手机验证码
+    rpc MobileVerify(Request) returns (Response) {}
+}
+message Request {
+    // 手机号
+    string mobile= 1;
+}
+
+message Response {
+    bool valid = 1;
+    string message = 2;
+    string uuid = 3;
+}

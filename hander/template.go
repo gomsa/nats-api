@@ -3,46 +3,28 @@ package hander
 import (
 	"context"
 
+	pb "github.com/gomsa/nats-api/proto/template"
+	"github.com/gomsa/nats/client"
+	templatePB "github.com/gomsa/nats/proto/template"
 	"github.com/gomsa/tools/uitl"
-	pb "github.com/gomsa/user-api/proto/role"
-	"github.com/gomsa/user-srv/client"
-	rolePB "github.com/gomsa/user-srv/proto/role"
 )
 
-// Role 角色结构
-type Role struct {
-}
-
-// All 权限列表
-func (srv *Role) All(ctx context.Context, req *pb.Request, res *pb.Response) (err error) {
-	query := &rolePB.Request{}
-	err = uitl.Data2Data(req, query)
-	if err != nil {
-		return err
-	}
-	roleRes, err := client.Role.All(ctx, query)
-	if err != nil {
-		return err
-	}
-	err = uitl.Data2Data(roleRes, res)
-	if err != nil {
-		return err
-	}
-	return err
+// Template 角色结构
+type Template struct {
 }
 
 // List 角色列表
-func (srv *Role) List(ctx context.Context, req *pb.ListQuery, res *pb.Response) (err error) {
-	query := &rolePB.ListQuery{}
+func (srv *Template) List(ctx context.Context, req *pb.ListQuery, res *pb.Response) (err error) {
+	query := &templatePB.ListQuery{}
 	err = uitl.Data2Data(req, query)
 	if err != nil {
 		return err
 	}
-	roleRes, err := client.Role.List(ctx, query)
+	templateRes, err := client.Template.List(ctx, query)
 	if err != nil {
 		return err
 	}
-	err = uitl.Data2Data(roleRes, res)
+	err = uitl.Data2Data(templateRes, res)
 	if err != nil {
 		return err
 	}
@@ -50,17 +32,17 @@ func (srv *Role) List(ctx context.Context, req *pb.ListQuery, res *pb.Response) 
 }
 
 // Get 获取角色
-func (srv *Role) Get(ctx context.Context, req *pb.Role, res *pb.Response) (err error) {
-	role := &rolePB.Role{}
-	err = uitl.Data2Data(req, role)
+func (srv *Template) Get(ctx context.Context, req *pb.Template, res *pb.Response) (err error) {
+	template := &templatePB.Template{}
+	err = uitl.Data2Data(req, template)
 	if err != nil {
 		return err
 	}
-	roleRes, err := client.Role.Get(ctx, role)
+	templateRes, err := client.Template.Get(ctx, template)
 	if err != nil {
 		return err
 	}
-	err = uitl.Data2Data(roleRes, res)
+	err = uitl.Data2Data(templateRes, res)
 	if err != nil {
 		return err
 	}
@@ -68,17 +50,17 @@ func (srv *Role) Get(ctx context.Context, req *pb.Role, res *pb.Response) (err e
 }
 
 // Create 创建角色
-func (srv *Role) Create(ctx context.Context, req *pb.Role, res *pb.Response) (err error) {
-	role := &rolePB.Role{}
-	err = uitl.Data2Data(req, role)
+func (srv *Template) Create(ctx context.Context, req *pb.Template, res *pb.Response) (err error) {
+	template := &templatePB.Template{}
+	err = uitl.Data2Data(req, template)
 	if err != nil {
 		return err
 	}
-	roleRes, err := client.Role.Create(ctx, role)
+	templateRes, err := client.Template.Create(ctx, template)
 	if err != nil {
 		return err
 	}
-	err = uitl.Data2Data(roleRes, res)
+	err = uitl.Data2Data(templateRes, res)
 	if err != nil {
 		return err
 	}
@@ -86,17 +68,17 @@ func (srv *Role) Create(ctx context.Context, req *pb.Role, res *pb.Response) (er
 }
 
 // Update 更新角色
-func (srv *Role) Update(ctx context.Context, req *pb.Role, res *pb.Response) (err error) {
-	role := &rolePB.Role{}
-	err = uitl.Data2Data(req, role)
+func (srv *Template) Update(ctx context.Context, req *pb.Template, res *pb.Response) (err error) {
+	template := &templatePB.Template{}
+	err = uitl.Data2Data(req, template)
 	if err != nil {
 		return err
 	}
-	roleRes, err := client.Role.Update(ctx, role)
+	templateRes, err := client.Template.Update(ctx, template)
 	if err != nil {
 		return err
 	}
-	err = uitl.Data2Data(roleRes, res)
+	err = uitl.Data2Data(templateRes, res)
 	if err != nil {
 		return err
 	}
@@ -104,18 +86,18 @@ func (srv *Role) Update(ctx context.Context, req *pb.Role, res *pb.Response) (er
 }
 
 // Delete 删除角色
-func (srv *Role) Delete(ctx context.Context, req *pb.Role, res *pb.Response) (err error) {
-	role := &rolePB.Role{
+func (srv *Template) Delete(ctx context.Context, req *pb.Template, res *pb.Response) (err error) {
+	template := &templatePB.Template{
 		Id: req.Id,
 	}
 	if err != nil {
 		return err
 	}
-	roleRes, err := client.Role.Delete(ctx, role)
+	templateRes, err := client.Template.Delete(ctx, template)
 	if err != nil {
 		return err
 	}
-	err = uitl.Data2Data(roleRes, res)
+	err = uitl.Data2Data(templateRes, res)
 	if err != nil {
 		return err
 	}

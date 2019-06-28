@@ -28,15 +28,13 @@ github.com/gomsa/tools/config
 github.com/gomsa/tools/uitl
 github.com/gomsa/tools/env
 github.com/gomsa/tools/k8s/client
-# github.com/gomsa/user-api v0.0.0-20190625093956-c8b9bd6ff3dc
-github.com/gomsa/user-api/proto/role
 # github.com/gomsa/user-srv v0.0.0-20190625082531-c719541bb788
 github.com/gomsa/user-srv/middleware
 github.com/gomsa/user-srv/client
-github.com/gomsa/user-srv/proto/role
 github.com/gomsa/user-srv/proto/auth
 github.com/gomsa/user-srv/proto/casbin
 github.com/gomsa/user-srv/proto/permission
+github.com/gomsa/user-srv/proto/role
 github.com/gomsa/user-srv/proto/user
 # github.com/google/btree v1.0.0
 github.com/google/btree

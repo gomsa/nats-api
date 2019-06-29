@@ -42,6 +42,8 @@ spec:
             "--server_address=:8080",
           ]
           env:
+            - name: USER_SRV_NAME
+              value: "user-srv.srv"
             - name: NATS_NAME
               value: "nats.srv"
             - name: REDIS_HOST

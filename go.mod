@@ -7,7 +7,7 @@ require (
 	github.com/golang/protobuf v1.3.1
 	github.com/gomsa/nats v0.0.0-20190629083103-b6f65527d969
 	github.com/gomsa/tools v0.0.0-20190615000832-56bbd6704f6b
-	github.com/gomsa/user v0.0.0-20190630022935-8cc3aab9fd92
+	github.com/gomsa/user v0.0.0-20190630023625-8db84f654004
 	github.com/micro/go-micro v1.7.0
 	github.com/micro/kubernetes v0.7.0
 	github.com/satori/go.uuid v1.2.0

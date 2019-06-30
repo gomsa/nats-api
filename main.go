@@ -8,8 +8,8 @@ import (
 	k8s "github.com/micro/kubernetes/go/micro"
 
 
-	"github.com/gomsa/user-srv/client"
-	m "github.com/gomsa/user-srv/middleware"
+	"github.com/gomsa/user/client"
+	m "github.com/gomsa/user/middleware"
 
 	"github.com/gomsa/nats-api/hander"
 	natsPB "github.com/gomsa/nats-api/proto/nats"

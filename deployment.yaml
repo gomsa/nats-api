@@ -43,7 +43,7 @@ spec:
           ]
           env:
             - name: USER_SRV_NAME
-              value: "user-srv.srv"
+              value: "user.srv"
             - name: NATS_NAME
               value: "nats.srv"
             - name: REDIS_HOST

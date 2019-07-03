@@ -15,7 +15,8 @@ import (
 	"github.com/gomsa/nats/client"
 	natsPB "github.com/gomsa/nats/proto/nats"
 )
-
+// 默认验证码过期时间
+var expireTime  time.Duration = 1
 // Nats 信息结构
 type Nats struct {
 }
@@ -33,6 +34,7 @@ func (srv *Nats) MobileVerify(ctx context.Context, req *pb.Request, res *pb.Resp
 		Type:      `sms`,
 		QueryParams: map[string]string{
 			`code`: vrify,
+			`time`: string(expireTime),
 		},
 	}
 	roleRes, err := client.Nats.ProcessCommonRequest(ctx, request)
@@ -55,6 +57,6 @@ func (srv *Nats) Verify() (key string,vrify string, err error) {
 	vrify = fmt.Sprintf("%06v", rand.New(rand.NewSource(time.Now().UnixNano())).Int31n(1000000))
 	redis := redis.NewClient()
 	// 过期时间默认30分钟
-	err = redis.SetNX(key, vrify, 30*time.Minute).Err()
+	err = redis.SetNX(key, vrify, expireTime * time.Minute).Err()
 	return key, vrify, err
 }

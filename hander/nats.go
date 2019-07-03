@@ -38,8 +38,8 @@ func (srv *Nats) MobileVerify(ctx context.Context, req *pb.Request, res *pb.Resp
 		},
 	}
 	roleRes, err := client.Nats.ProcessCommonRequest(ctx, request)
-		log.Log(err)
 	if err != nil {
+		log.Log(err)
 		return err
 	}
 	if !roleRes.Valid {

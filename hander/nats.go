@@ -24,6 +24,7 @@ type Nats struct {
 // MobileVerify 手机验证码
 func (srv *Nats) MobileVerify(ctx context.Context, req *pb.Request, res *pb.Response) (err error) {
 	uuid, vrify, err := srv.Verify()
+	log.Log(uuid, vrify, err)
 	if err != nil {
 		log.Log(err)
 		return err
@@ -37,7 +38,9 @@ func (srv *Nats) MobileVerify(ctx context.Context, req *pb.Request, res *pb.Resp
 			`time`: string(expireTime),
 		},
 	}
+	log.Log(request)
 	roleRes, err := client.Nats.ProcessCommonRequest(ctx, request)
+	log.Log(roleRes, err )
 	if err != nil {
 		log.Log(err)
 		return err
